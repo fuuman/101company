@@ -1,0 +1,20 @@
+<tr id="company_<%= company.id %>">
+  <td><%= index %></td>
+  <td><%= company.name %></td>
+  <td><%= get_department_count(company) %></td>
+  <td><%= get_employee_count(company) %></td>
+  <td>
+    <p data-placement="top" data-toggle="tooltip" title="Edit">
+      <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit">
+        <span class="glyphicon glyphicon-pencil"></span></button>
+    </p>
+  </td>
+  <td>
+    <%= link_to company, method: :delete, data: {confirm: "Are you sure?"}, remote: true do %>
+        <p data-placement="top" data-toggle="tooltip" title="Delete">
+          <button class="btn btn-danger btn-xs">
+            <span class="glyphicon glyphicon-trash"></span></button>
+        </p>
+    <% end %>
+  </td>
+</tr>
