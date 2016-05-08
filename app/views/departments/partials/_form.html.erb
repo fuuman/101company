@@ -1,0 +1,24 @@
+<%= form_for department, remote: true do |f| %>
+    <% if department.errors.any? %>
+        <p class="alert alert-danger"><%= department.errors.full_messages.first %></p>
+    <% end %>
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :company_id %><br/>
+      <%= f.select :company_id, options_from_collection_for_select(companies, :id, :name, f.object.company_id), include_blank: '' %>
+    </p>
+    <p>
+      <%= f.label :super_department_id %><br/>
+      <%= f.select :super_department_id, options_from_collection_for_select(departments, :id, :name, f.object.super_department_id), include_blank: '' %>
+    </p>
+    <p>
+      <%= f.label :manager_id %><br/>
+      <%= f.select :manager_id, options_from_collection_for_select(employees, :id, :name, f.object.manager_id), include_blank: '' %>
+    </p>
+    <p>
+      <%= f.submit nil, class: 'btn btn-warning' %>
+    </p>
+<% end %>

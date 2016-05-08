@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   get 'welcomes/index'
   get 'abouts/index'
-  resources :companies, only: [:index, :new, :create, :show, :destroy]
-  resources :departments, only: [:index, :new, :create, :show, :destroy]
-  resources :employees, only: [:index, :new, :create, :show, :destroy]
+  resources :companies, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :departments, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :employees, only: [:index, :new, :create, :edit, :update, :destroy] do
+    collection do
+      post :cut
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

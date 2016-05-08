@@ -1,0 +1,2 @@
+$('#department_modal').modal('hide')
+$('#department_<%= @department.id %>').replaceWith('<%= j render partial: 'departments/partials/department', locals: {department: @department} %>')

@@ -1,11 +1,10 @@
 <tr id="company_<%= company.id %>">
-  <td><%= index %></td>
   <td><%= company.name %></td>
   <td><%= get_department_count(company) %></td>
   <td><%= get_employee_count(company) %></td>
   <td>
     <p data-placement="top" data-toggle="tooltip" title="Edit">
-      <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit">
+      <button class="btn btn-primary btn-xs" id="edit_company_<%= company.id %>">
         <span class="glyphicon glyphicon-pencil"></span></button>
     </p>
   </td>
@@ -18,3 +17,11 @@
     <% end %>
   </td>
 </tr>
+<script>$(function () {
+  var $modal = $('#company_modal');
+  $('#edit_company_<%= company.id %>').on('click', function () {
+    $modal.load('<%= edit_company_path(company) %>', '', function () {
+      $modal.modal();
+    });
+  });
+});</script>

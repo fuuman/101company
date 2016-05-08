@@ -1,2 +1,13 @@
-<h1>Company#new</h1>
-<p>Find me in app/views/company/new.html.erb</p>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      <h4 class="modal-title custom_align" id="Heading">Create new company</h4>
+    </div>
+    <div class="modal-body">
+      <%= render partial: 'companies/partials/form', locals: {company: @company} %>
+    </div>
+  </div>
+  <!-- /.modal-content -->
+</div>

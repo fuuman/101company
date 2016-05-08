@@ -26,6 +26,9 @@ Ruby 2.3.0
 Navbar: http://bootsnipp.com/snippets/featured/navbar-fixed-on-scrolling-with-transition
 Datatables: http://bootsnipp.com/snippets/featured/bootstrap-snipp-for-datatable
 
+* Pictures:
+Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

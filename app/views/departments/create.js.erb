@@ -1,0 +1,2 @@
+$('#department_modal').modal('hide')
+$('#department_table').find('tbody').append('<%= j render partial: 'departments/partials/department', locals: {department: @department} %>')

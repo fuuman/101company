@@ -1,0 +1,2 @@
+$('#company_modal').modal('hide')
+$('#company_<%= @company.id %>').replaceWith('<%= j render partial: 'companies/partials/company', locals: {company: @company} %>')
