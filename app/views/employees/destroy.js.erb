@@ -1,1 +1,2 @@
 $('#employee_<%= @employee.id %>').fadeOut(function() {$(this).remove()});
+$('#salary_statistics').html('<%= j render partial: 'employees/partials/statistics', locals: {employees: @employees}  %>')

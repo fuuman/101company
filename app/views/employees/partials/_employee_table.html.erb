@@ -7,17 +7,15 @@
       <p>
         <button type="button" id="new_employee" class="btn btn-primary mybuttons">Create new employee</button>
       </p>
+
       <%= link_to cut_employees_path employees.to_param, method: :post %>
+
+      <div id="salary_statistics">
+        <%= render partial: 'employees/partials/statistics', locals: {employees: employees} %>
+      </div>
+
       <div class="table-responsive">
-
         <table id="employee_table" class="table table-bordred table-striped">
-
-          <p id="total_salaries">
-          <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
-          </p>
-          <p id="total_salaries">
-          <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
-          </p>
 
           <thead>
           <tr>

@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   # === Callbacks ===
-  before_action :set_employees, only: [:index]
+  before_action :set_employees, only: [:index, :create, :update]
   before_action :set_departments, only: [:new, :edit]
   before_action :set_employee, only: [:edit, :update, :destroy]
 
@@ -23,10 +23,12 @@ class EmployeesController < ApplicationController
   def update
     @employee.update(employee_params)
     set_employee
+    set_employees
   end
 
   def destroy
     @employee.destroy
+    set_employees
   end
 
   def cut

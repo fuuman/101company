@@ -11,7 +11,11 @@ module EmployeesHelper
   end
 
   def get_mean_salary(employees)
-    (get_total_salaries(employees) / employees.count).round(2)
+    if employees.count != 0
+      (get_total_salaries(employees) / employees.count).round(2)
+    else
+      0
+    end
   end
 
 end

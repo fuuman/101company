@@ -1,3 +1,4 @@
 $('#employee_modal').modal('hide')
 $('#employee_table').find('tbody').append('<%= j render partial: 'employees/partials/employee', locals: {employee: @employee} %>')
+$('#salary_statistics').html('<%= j render partial: 'employees/partials/statistics' , locals: {employees: @employees} %>')
 
