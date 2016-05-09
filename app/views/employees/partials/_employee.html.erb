@@ -1,7 +1,7 @@
 <tr id="employee_<%= employee.id %>">
   <td><%= employee.name %></td>
   <td><%= employee.address %></td>
-  <td><%= employee.salary %></td>
+  <td><%= '%.2f' % employee.salary rescue '' %></td>
   <td><%= employee.department.company.name rescue '' %></td>
   <td><%= employee.department.name rescue '' %></td>
   <td>

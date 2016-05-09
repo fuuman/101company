@@ -6,4 +6,7 @@ class Department < ActiveRecord::Base
   belongs_to :manager, class_name: 'Employee'
   belongs_to :company
 
+  # === Validations ===
+  validates :name, presence: true
+
 end

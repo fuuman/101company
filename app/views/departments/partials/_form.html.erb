@@ -1,10 +1,8 @@
-<%= form_for department, remote: true do |f| %>
-    <% if department.errors.any? %>
-        <p class="alert alert-danger"><%= department.errors.full_messages.first %></p>
-    <% end %>
+<%= form_for department, remote: true, html: {id: 'department_form'} do |f| %>
     <p>
       <%= f.label :name %><br/>
       <%= f.text_field :name %>
+      <span class="help-block"></span>
     </p>
     <p>
       <%= f.label :company_id %><br/>
@@ -22,3 +20,28 @@
       <%= f.submit nil, class: 'btn btn-warning' %>
     </p>
 <% end %>
+<script>
+  $(function () {
+    var $form = $('#department_form');
+    $form.validate({
+      rules: {
+        "department[name]": {
+          required: true
+        }
+      },
+      errorPlacement: function (error, element) {
+        $(element).closest('p').find('.help-block').text(error.text());
+      },
+      highlight: function (element) {
+        $(element).closest('p').removeClass('has-success');
+        $(element).closest('p').addClass('has-error');
+      },
+      unhighlight: function (element) {
+        $(element).closest('p').removeClass('has-error');
+      },
+      success: function (element) {
+        $(element).closest('p').addClass('has-success');
+      }
+    });
+  });
+</script>

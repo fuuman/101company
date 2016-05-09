@@ -13,7 +13,10 @@
         <table id="employee_table" class="table table-bordred table-striped">
 
           <p id="total_salaries">
-          <h4>Total salaries: <%= get_total_salaries(employees) %></h4>
+          <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
+          </p>
+          <p id="total_salaries">
+          <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
           </p>
 
           <thead>

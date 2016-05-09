@@ -16774,3 +16774,2043 @@ Processing by EmployeesController#destroy as JS
   [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
   Rendered employees/destroy.js.erb (0.1ms)
 Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 3.8ms)
+  [1m[36m (283.3ms)[0m  [1mCREATE DATABASE "CompanyManager_development" ENCODING = 'unicode'[0m
+  [1m[35m (12.8ms)[0m  CREATE TABLE "companies" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "departments" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "company_id" integer, "super_department_id" integer, "manager_id" integer) [0m
+  [1m[35m (5.2ms)[0m  CREATE  INDEX  "index_departments_on_company_id" ON "departments" USING btree ("company_id")
+  [1m[36m (6.8ms)[0m  [1mCREATE  INDEX  "index_departments_on_manager_id" ON "departments" USING btree ("manager_id")[0m
+  [1m[35m (10.2ms)[0m  CREATE  INDEX  "index_departments_on_super_department_id" ON "departments" USING btree ("super_department_id")
+  [1m[36m (20.3ms)[0m  [1mCREATE TABLE "employees" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "salary" float(24), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "department_id" integer) [0m
+  [1m[35m (8.1ms)[0m  CREATE  INDEX  "index_employees_on_department_id" ON "employees" USING btree ("department_id")
+  [1m[36m (8.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (5.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160502131049')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160429100403')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160427214817')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160427214816')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/management/smtp_servers" for 127.0.0.1 at 2016-05-09 16:39:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/management/smtp_servers"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/mschanz/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mschanz/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mschanz/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-09 16:39:27 +0200
+Processing by WelcomesController#index as HTML
+  Rendered welcomes/index.html.erb within layouts/application (5089.6ms)
+Completed 200 OK in 5261ms (Views: 5260.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:39:33 +0200
+
+
+Started GET "/assets/homepage-72056c102fef4737893665c90d081aade22a2facc5540c60b81daec2b8945aac.jpg" for 127.0.0.1 at 2016-05-09 16:39:33 +0200
+
+
+Started GET "/companies" for 127.0.0.1 at 2016-05-09 16:40:14 +0200
+Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies"
+  Rendered companies/partials/_company_table.html.erb (7.0ms)
+  Rendered companies/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 135ms (Views: 126.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:40:19 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/partials/_employee_table.html.erb (8.7ms)
+  Rendered employees/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 104ms (Views: 95.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:44:05 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (1.7ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (17.7ms)
+  Rendered employees/new.html.erb (25.1ms)
+Completed 200 OK in 63ms (Views: 31.4ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:44:11 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"frf", "address"=>"rfr", "salary"=>"555", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "frf"], ["address", "rfr"], ["salary", 555.0], ["created_at", "2016-05-09 14:44:11.340927"], ["updated_at", "2016-05-09 14:44:11.340927"]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  Rendered employees/partials/_employee.html.erb (14.0ms)
+  Rendered employees/create.js.erb (20.7ms)
+Completed 200 OK in 47ms (Views: 29.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:44:13 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (1.0ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (7.7ms)
+  Rendered employees/new.html.erb (12.2ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:44:19 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"t34", "address"=>"3424", "salary"=>"234", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "t34"], ["address", "3424"], ["salary", 234.0], ["created_at", "2016-05-09 14:44:19.668794"], ["updated_at", "2016-05-09 14:44:19.668794"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  Rendered employees/partials/_employee.html.erb (2.6ms)
+  Rendered employees/create.js.erb (9.5ms)
+Completed 200 OK in 27ms (Views: 17.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:44:25 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.6ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (5.0ms)
+  Rendered employees/new.html.erb (9.0ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:44:30 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"rgrt", "address"=>"gtgtgt", "salary"=>"222", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "rgrt"], ["address", "gtgtgt"], ["salary", 222.0], ["created_at", "2016-05-09 14:44:30.270704"], ["updated_at", "2016-05-09 14:44:30.270704"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  Rendered employees/partials/_employee.html.erb (2.5ms)
+  Rendered employees/create.js.erb (7.9ms)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:44:31 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (5.2ms)
+  Rendered employees/partials/_employee.html.erb (3.0ms)
+  Rendered employees/partials/_employee.html.erb (3.3ms)
+  Rendered employees/partials/_employee_table.html.erb (22.7ms)
+  Rendered employees/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:44:32 +0200
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:49:16 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (1.2ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (13.0ms)
+  Rendered employees/partials/_employee.html.erb (3.4ms)
+  Rendered employees/partials/_employee.html.erb (3.8ms)
+  Rendered employees/partials/_employee_table.html.erb (44.5ms)
+  Rendered employees/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 124ms (Views: 113.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:49:17 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:49:23 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.6ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (8.9ms)
+  Rendered employees/new.html.erb (14.2ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:49:30 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"Thzth", "address"=>"zthzthzt", "salary"=>"14", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Thzth"], ["address", "zthzthzt"], ["salary", 14.0], ["created_at", "2016-05-09 14:49:30.191918"], ["updated_at", "2016-05-09 14:49:30.191918"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/create.js.erb (8.6ms)
+Completed 200 OK in 25ms (Views: 14.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:49:31 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (4.3ms)
+  Rendered employees/partials/_employee.html.erb (3.6ms)
+  Rendered employees/partials/_employee.html.erb (2.7ms)
+  Rendered employees/partials/_employee.html.erb (2.9ms)
+  Rendered employees/partials/_employee_table.html.erb (23.8ms)
+  Rendered employees/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 103ms (Views: 101.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:49:32 +0200
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:50:12 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.9ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (4.6ms)
+  Rendered employees/partials/_employee.html.erb (3.3ms)
+  Rendered employees/partials/_employee.html.erb (3.8ms)
+  Rendered employees/partials/_employee.html.erb (3.6ms)
+  Rendered employees/partials/_employee_table.html.erb (25.9ms)
+  Rendered employees/index.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 87ms (Views: 84.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:50:13 +0200
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.7ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (3.0ms)
+  Rendered employees/partials/_employee.html.erb (3.1ms)
+  Rendered employees/partials/_employee.html.erb (4.8ms)
+  Rendered employees/partials/_employee.html.erb (2.6ms)
+  Rendered employees/partials/_employee_table.html.erb (21.2ms)
+  Rendered employees/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 80ms (Views: 79.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:15 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:50:16 +0200
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (4.2ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (4.1ms)
+  Rendered employees/partials/_employee.html.erb (10.8ms)
+  Rendered employees/partials/_employee.html.erb (4.0ms)
+  Rendered employees/partials/_employee.html.erb (7.9ms)
+  Rendered employees/partials/_employee_table.html.erb (51.4ms)
+  Rendered employees/index.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 149ms (Views: 136.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:29 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:50:30 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:50:36 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.6ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (5.4ms)
+  Rendered employees/new.html.erb (9.2ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:50:40 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"34,45", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", ""], ["address", ""], ["salary", 34.0], ["created_at", "2016-05-09 14:50:40.793045"], ["updated_at", "2016-05-09 14:50:40.793045"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  Rendered employees/partials/_employee.html.erb (4.3ms)
+  Rendered employees/create.js.erb (9.7ms)
+Completed 200 OK in 25ms (Views: 15.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:51:46 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.8ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (7.4ms)
+  Rendered employees/new.html.erb (11.3ms)
+Completed 200 OK in 43ms (Views: 17.5ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:51:51 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"5", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered employees/partials/_employee.html.erb (10.5ms)
+  Rendered employees/create.js.erb (15.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1483500902848201487_70127357786840'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb___4317014311095965681_70127358114920'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (14.2ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:51:54 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"5", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered employees/partials/_employee.html.erb (8.2ms)
+  Rendered employees/create.js.erb (13.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1483500902848201487_70127357786840'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb___4317014311095965681_70127358114920'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.3ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.1ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:52:59 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "employees"
+  Rendered employees/partials/_employee.html.erb (3.3ms)
+  Rendered employees/partials/_employee.html.erb (1.8ms)
+  Rendered employees/partials/_employee.html.erb (1.9ms)
+  Rendered employees/partials/_employee.html.erb (2.2ms)
+  Rendered employees/partials/_employee.html.erb (2.4ms)
+  Rendered employees/partials/_employee_table.html.erb (22.4ms)
+  Rendered employees/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:52:59 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:53:00 +0200
+
+
+Started GET "/employees/5/edit" for 127.0.0.1 at 2016-05-09 16:53:03 +0200
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mDepartment Load (0.9ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (5.5ms)
+  Rendered employees/edit.html.erb (12.7ms)
+Completed 200 OK in 27ms (Views: 16.0ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/employees/5" for 127.0.0.1 at 2016-05-09 16:53:05 +0200
+Processing by EmployeesController#update as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"fr", "address"=>"", "salary"=>"34.0", "department_id"=>""}, "commit"=>"Update Employee", "id"=>"5"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "employees" SET "name" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["name", "fr"], ["updated_at", "2016-05-09 14:53:05.880300"], ["id", 5]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered employees/partials/_employee.html.erb (2.8ms)
+  Rendered employees/update.js.erb (8.2ms)
+Completed 200 OK in 33ms (Views: 18.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/employees/5/edit" for 127.0.0.1 at 2016-05-09 16:53:07 +0200
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mDepartment Load (0.6ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (5.3ms)
+  Rendered employees/edit.html.erb (8.9ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/employees/5" for 127.0.0.1 at 2016-05-09 16:53:09 +0200
+Processing by EmployeesController#update as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"34.0", "department_id"=>""}, "commit"=>"Update Employee", "id"=>"5"}
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered employees/partials/_employee.html.erb (2.5ms)
+  Rendered employees/update.js.erb (8.0ms)
+Completed 200 OK in 34ms (Views: 14.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:53:14 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (2.5ms)
+  Rendered employees/partials/_employee.html.erb (2.1ms)
+  Rendered employees/partials/_employee.html.erb (2.1ms)
+  Rendered employees/partials/_employee.html.erb (2.1ms)
+  Rendered employees/partials/_employee.html.erb (2.2ms)
+  Rendered employees/partials/_employee_table.html.erb (19.0ms)
+  Rendered employees/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 74ms (Views: 72.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:14 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:14 +0200
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:53:15 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:54:57 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.7ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (12.1ms)
+  Rendered employees/new.html.erb (16.1ms)
+Completed 200 OK in 43ms (Views: 22.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:55:00 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.4ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (6.2ms)
+  Rendered employees/new.html.erb (10.0ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 16:55:01 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (8.6ms)
+  Rendered employees/partials/_employee.html.erb (3.3ms)
+  Rendered employees/partials/_employee.html.erb (2.7ms)
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/partials/_employee.html.erb (3.5ms)
+  Rendered employees/partials/_employee_table.html.erb (33.5ms)
+  Rendered employees/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 97ms (Views: 96.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:01 +0200
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 16:55:01 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:01 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:01 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:01 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 16:55:02 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:55:03 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.6ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (6.2ms)
+  Rendered employees/new.html.erb (10.0ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:55:09 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.5ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (6.4ms)
+  Rendered employees/new.html.erb (10.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:55:15 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"gtgtrh", "address"=>"", "salary"=>"", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "employees" ("name", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "gtgtrh"], ["address", ""], ["created_at", "2016-05-09 14:55:15.996009"], ["updated_at", "2016-05-09 14:55:15.996009"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  Rendered employees/partials/_employee.html.erb (5.9ms)
+  Rendered employees/create.js.erb (11.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (can't convert nil into Float):
+    1: <tr id="employee_<%= employee.id %>">
+    2:   <td><%= employee.name %></td>
+    3:   <td><%= employee.address %></td>
+    4:   <td><%= '%.2f' % employee.salary %></td>
+    5:   <td><%= employee.department.company.name rescue '' %></td>
+    6:   <td><%= employee.department.name rescue '' %></td>
+    7:   <td>
+  app/views/employees/partials/_employee.html.erb:4:in `%'
+  app/views/employees/partials/_employee.html.erb:4:in `_app_views_employees_partials__employee_html_erb__1483500902848201487_70127357786840'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb___4317014311095965681_70127358114920'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.1ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:55:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (1.4ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (28.2ms)
+  Rendered employees/new.html.erb (38.7ms)
+Completed 200 OK in 78ms (Views: 49.2ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:55:48 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"gtgt", "address"=>"", "salary"=>"", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "employees" ("name", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "gtgt"], ["address", ""], ["created_at", "2016-05-09 14:55:48.521789"], ["updated_at", "2016-05-09 14:55:48.521789"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  Rendered employees/partials/_employee.html.erb (14.4ms)
+  Rendered employees/create.js.erb (21.6ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.1ms)
+
+ActionView::Template::Error (can't convert nil into Float):
+    1: <tr id="employee_<%= employee.id %>">
+    2:   <td><%= employee.name %></td>
+    3:   <td><%= employee.address %></td>
+    4:   <td><%= '%.2f' % employee.salary %></td>
+    5:   <td><%= employee.department.company.name rescue '' %></td>
+    6:   <td><%= employee.department.name rescue '' %></td>
+    7:   <td>
+  app/views/employees/partials/_employee.html.erb:4:in `%'
+  app/views/employees/partials/_employee.html.erb:4:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_22906700'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.0ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:11 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"gtgt", "address"=>"", "salary"=>"", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "employees" ("name", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "gtgt"], ["address", ""], ["created_at", "2016-05-09 14:56:11.750354"], ["updated_at", "2016-05-09 14:56:11.750354"]]
+  [1m[35m (3.5ms)[0m  COMMIT
+  Rendered employees/partials/_employee.html.erb (11.8ms)
+  Rendered employees/create.js.erb (17.8ms)
+Completed 200 OK in 33ms (Views: 23.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 16:56:14 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.8ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (6.8ms)
+  Rendered employees/new.html.erb (11.5ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:18 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (13.7ms)
+  Rendered employees/create.js.erb (18.5ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (13.7ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:19 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (7.7ms)
+  Rendered employees/create.js.erb (11.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (14.1ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:20 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (7.7ms)
+  Rendered employees/create.js.erb (12.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (14.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:20 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (8.3ms)
+  Rendered employees/create.js.erb (13.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (14.7ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:20 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (8.2ms)
+  Rendered employees/create.js.erb (12.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.7ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:21 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (7.4ms)
+  Rendered employees/create.js.erb (11.7ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (14.8ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 16:56:21 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"657657", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (7.8ms)
+  Rendered employees/create.js.erb (13.2ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__1565784308851552524_23244180'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb__671910159117844753_23086460'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.5ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:01:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (1.1ms)[0m  SELECT "employees".* FROM "employees"
+  Rendered employees/partials/_employee_table.html.erb (28.5ms)
+  Rendered employees/index.html.erb within layouts/application (34.4ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 7.8ms)
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    13:         <table id="employee_table" class="table table-bordred table-striped">
+    14: 
+    15:           <p id="total_salaries">
+    16:           <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
+    17:           </p>
+    18:           <p id="total_salaries">
+    19:           <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
+  app/helpers/employees_helper.rb:6:in `+'
+  app/helpers/employees_helper.rb:6:in `block in get_total_salaries'
+  app/helpers/employees_helper.rb:5:in `get_total_salaries'
+  app/views/employees/partials/_employee_table.html.erb:16:in `_app_views_employees_partials__employee_table_html_erb__4130995418037518624_36256880'
+  app/views/employees/index.html.erb:1:in `_app_views_employees_index_html_erb___2445740977867388559_36444100'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.6ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:02:20 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/partials/_employee_table.html.erb (18.6ms)
+  Rendered employees/index.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 4.4ms)
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    13:         <table id="employee_table" class="table table-bordred table-striped">
+    14: 
+    15:           <p id="total_salaries">
+    16:           <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
+    17:           </p>
+    18:           <p id="total_salaries">
+    19:           <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
+  app/helpers/employees_helper.rb:7:in `+'
+  app/helpers/employees_helper.rb:7:in `block in get_total_salaries'
+  app/helpers/employees_helper.rb:5:in `get_total_salaries'
+  app/views/employees/partials/_employee_table.html.erb:16:in `_app_views_employees_partials__employee_table_html_erb__4130995418037518624_36256880'
+  app/views/employees/index.html.erb:1:in `_app_views_employees_index_html_erb___2445740977867388559_36444100'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (45.7ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:02:31 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT "employees".* FROM "employees"
+  Rendered employees/partials/_employee_table.html.erb (21.5ms)
+  Rendered employees/index.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 5.3ms)
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    13:         <table id="employee_table" class="table table-bordred table-striped">
+    14: 
+    15:           <p id="total_salaries">
+    16:           <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
+    17:           </p>
+    18:           <p id="total_salaries">
+    19:           <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
+  app/helpers/employees_helper.rb:7:in `+'
+  app/helpers/employees_helper.rb:7:in `block in get_total_salaries'
+  app/helpers/employees_helper.rb:5:in `get_total_salaries'
+  app/views/employees/partials/_employee_table.html.erb:16:in `_app_views_employees_partials__employee_table_html_erb__4130995418037518624_36256880'
+  app/views/employees/index.html.erb:1:in `_app_views_employees_index_html_erb___2445740977867388559_36444100'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.3ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.1ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:02:44 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/partials/_employee_table.html.erb (23.8ms)
+  Rendered employees/index.html.erb within layouts/application (24.7ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.6ms)
+
+ActionView::Template::Error (nil can't be coerced into Float):
+    13:         <table id="employee_table" class="table table-bordred table-striped">
+    14: 
+    15:           <p id="total_salaries">
+    16:           <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
+    17:           </p>
+    18:           <p id="total_salaries">
+    19:           <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
+  app/helpers/employees_helper.rb:7:in `+'
+  app/helpers/employees_helper.rb:7:in `block in get_total_salaries'
+  app/helpers/employees_helper.rb:5:in `get_total_salaries'
+  app/views/employees/partials/_employee_table.html.erb:16:in `_app_views_employees_partials__employee_table_html_erb__4130995418037518624_36256880'
+  app/views/employees/index.html.erb:1:in `_app_views_employees_index_html_erb___2445740977867388559_36444100'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (34.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (48.1ms)
+
+
+Started POST "/__web_console/repl_sessions/1e8de831076403b3ce6f16ae6c1ae33b/trace" for 127.0.0.1 at 2016-05-09 17:03:24 +0200
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:03:39 +0200
+Processing by EmployeesController#index as HTML
+  [1m[35mEmployee Load (1.2ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "employees"[0m
+  Rendered employees/partials/_employee.html.erb (22.2ms)
+  Rendered employees/partials/_employee.html.erb (2.7ms)
+  Rendered employees/partials/_employee.html.erb (3.0ms)
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/partials/_employee.html.erb (2.9ms)
+  Rendered employees/partials/_employee.html.erb (3.5ms)
+  Rendered employees/partials/_employee.html.erb (3.7ms)
+  Rendered employees/partials/_employee.html.erb (3.6ms)
+  Rendered employees/partials/_employee_table.html.erb (79.3ms)
+  Rendered employees/index.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 3438ms (Views: 3428.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/jquery.validate.self-5f1421e7608c66470d31cfefd1cb8e7cfe3345847c7b73a5fe63562528dee96b.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/jquery.validate.additional-methods.self-0fc647a2ea7acd6d90dfa6870b4f2898596efb1ad5980957a46c47e2284f6460.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 17:03:43 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:03:50 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.8ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (23.0ms)
+  Rendered employees/new.html.erb (31.9ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 17:03:53 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  Rendered employees/partials/_employee.html.erb (11.4ms)
+  Rendered employees/create.js.erb (16.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__3898921139235808338_70136987167160'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb___2296017809305116710_70136987094900'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.6ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:04:38 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.9ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "employees"
+  Rendered employees/partials/_employee.html.erb (3.5ms)
+  Rendered employees/partials/_employee.html.erb (3.1ms)
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/partials/_employee.html.erb (4.7ms)
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/partials/_employee.html.erb (5.2ms)
+  Rendered employees/partials/_employee.html.erb (5.9ms)
+  Rendered employees/partials/_employee.html.erb (4.5ms)
+  Rendered employees/partials/_employee_table.html.erb (46.0ms)
+  Rendered employees/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 149ms (Views: 145.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/jquery.validate.self-5f1421e7608c66470d31cfefd1cb8e7cfe3345847c7b73a5fe63562528dee96b.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/jquery.validate.additional-methods.self-0fc647a2ea7acd6d90dfa6870b4f2898596efb1ad5980957a46c47e2284f6460.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 17:04:39 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:04:40 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.6ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (6.9ms)
+  Rendered employees/new.html.erb (12.7ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 17:04:41 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered employees/partials/_employee.html.erb (10.8ms)
+  Rendered employees/create.js.erb (15.7ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__3898921139235808338_70136987167160'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb___2296017809305116710_70136987094900'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.3ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.9ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:06:57 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.6ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (5.8ms)
+  Rendered employees/new.html.erb (9.6ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 17:06:59 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"", "address"=>"", "salary"=>"", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  Rendered employees/partials/_employee.html.erb (9.5ms)
+  Rendered employees/create.js.erb (14.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil} missing required keys: [:id]):
+    22: <script>$(function () {
+    23:   var $modal = $('#employee_modal');
+    24:   $('#edit_employee_<%= employee.id %>').on('click', function () {
+    25:     $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+    26:       $modal.modal();
+    27:     });
+    28:   });
+  app/views/employees/partials/_employee.html.erb:25:in `_app_views_employees_partials__employee_html_erb__3898921139235808338_70136987167160'
+  app/views/employees/create.js.erb:2:in `_app_views_employees_create_js_erb___2296017809305116710_70136987094900'
+
+
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.2ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.4ms)
+  Rendered /home/mschanz/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (16.2ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:08:29 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (1.3ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (30.4ms)
+  Rendered employees/new.html.erb (42.7ms)
+Completed 200 OK in 92ms (Views: 55.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-05-09 17:09:47 +0200
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.7ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered departments/partials/_department_table.html.erb (2.7ms)
+  Rendered departments/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 468ms (Views: 467.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2016-05-09 17:09:50 +0200
+Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies"
+  Rendered companies/partials/_company_table.html.erb (5.5ms)
+  Rendered companies/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 176ms (Views: 168.2ms | ActiveRecord: 2.6ms)
+  [1m[36mEmployee Load (0.9ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  [1m[35mEmployee Load (1.0ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3  [["salary", 277.5], ["updated_at", "2016-05-09 15:13:00.209756"], ["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["salary", 117.0], ["updated_at", "2016-05-09 15:13:00.225575"], ["id", 2]]
+  [1m[35m (3.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3  [["salary", 111.0], ["updated_at", "2016-05-09 15:13:00.232512"], ["id", 3]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["salary", 7.0], ["updated_at", "2016-05-09 15:13:00.240141"], ["id", 4]]
+  [1m[35m (3.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3  [["salary", 17.0], ["updated_at", "2016-05-09 15:13:00.247203"], ["id", 5]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:13:16 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.0ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "employees"
+  Rendered employees/partials/_employee.html.erb (23.4ms)
+  Rendered employees/partials/_employee.html.erb (5.1ms)
+  Rendered employees/partials/_employee.html.erb (5.0ms)
+  Rendered employees/partials/_employee.html.erb (3.5ms)
+  Rendered employees/partials/_employee.html.erb (3.3ms)
+  Rendered employees/partials/_employee.html.erb (3.3ms)
+  Rendered employees/partials/_employee.html.erb (4.1ms)
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/partials/_employee_table.html.erb (73.3ms)
+  Rendered employees/index.html.erb within layouts/application (75.8ms)
+Completed 200 OK in 172ms (Views: 169.3ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/employees/6" for 127.0.0.1 at 2016-05-09 17:13:21 +0200
+Processing by EmployeesController#destroy as JS
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 6]]
+  [1m[35m (2.6ms)[0m  COMMIT
+  Rendered employees/destroy.js.erb (1.2ms)
+Completed 200 OK in 36ms (Views: 8.2ms | ActiveRecord: 5.1ms)
+
+
+Started DELETE "/employees/7" for 127.0.0.1 at 2016-05-09 17:13:22 +0200
+Processing by EmployeesController#destroy as JS
+  Parameters: {"id"=>"7"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 7]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  Rendered employees/destroy.js.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 14.5ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/employees/8" for 127.0.0.1 at 2016-05-09 17:13:24 +0200
+Processing by EmployeesController#destroy as JS
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 8]]
+  [1m[35m (3.9ms)[0m  COMMIT
+  Rendered employees/destroy.js.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 9.4ms | ActiveRecord: 5.5ms)
+  [1m[35mEmployee Load (0.8ms)[0m  SELECT "employees".* FROM "employees"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3  [["salary", 138.75], ["updated_at", "2016-05-09 15:13:27.718159"], ["id", 1]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["salary", 58.5], ["updated_at", "2016-05-09 15:13:27.725237"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3  [["salary", 55.5], ["updated_at", "2016-05-09 15:13:27.731285"], ["id", 3]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["salary", 3.5], ["updated_at", "2016-05-09 15:13:27.737139"], ["id", 4]]
+  [1m[35m (3.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3  [["salary", 8.5], ["updated_at", "2016-05-09 15:13:27.745017"], ["id", 5]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:13:32 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "employees"
+  Rendered employees/partials/_employee.html.erb (4.8ms)
+  Rendered employees/partials/_employee.html.erb (6.1ms)
+  Rendered employees/partials/_employee.html.erb (6.0ms)
+  Rendered employees/partials/_employee.html.erb (6.6ms)
+  Rendered employees/partials/_employee.html.erb (6.0ms)
+  Rendered employees/partials/_employee_table.html.erb (41.9ms)
+  Rendered employees/index.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 179ms (Views: 176.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/jquery.validate.self-5f1421e7608c66470d31cfefd1cb8e7cfe3345847c7b73a5fe63562528dee96b.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/jquery.validate.additional-methods.self-0fc647a2ea7acd6d90dfa6870b4f2898596efb1ad5980957a46c47e2284f6460.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 17:13:33 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:16:21 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.6ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (5.8ms)
+  Rendered employees/new.html.erb (9.9ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 17:16:27 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"Hrthtr", "address"=>"", "salary"=>"55", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hrthtr"], ["address", ""], ["salary", 55.0], ["created_at", "2016-05-09 15:16:27.043091"], ["updated_at", "2016-05-09 15:16:27.043091"]]
+  [1m[35m (3.2ms)[0m  COMMIT
+  Rendered employees/partials/_employee.html.erb (5.0ms)
+  Rendered employees/create.js.erb (12.4ms)
+Completed 200 OK in 32ms (Views: 20.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2016-05-09 17:16:29 +0200
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "employees"
+  Rendered employees/partials/_employee.html.erb (3.9ms)
+  Rendered employees/partials/_employee.html.erb (2.9ms)
+  Rendered employees/partials/_employee.html.erb (3.2ms)
+  Rendered employees/partials/_employee.html.erb (2.5ms)
+  Rendered employees/partials/_employee.html.erb (3.1ms)
+  Rendered employees/partials/_employee.html.erb (2.5ms)
+  Rendered employees/partials/_employee_table.html.erb (30.8ms)
+  Rendered employees/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 110ms (Views: 108.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-ada2e0f476dcb244f381bc990cdc7f1040f1aa233ef826a1512e467f7d833ddd.css?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/components/navbar.self-8fb161b74c8165ee7703d63049bbf60fc7e6365b11e5c2e810b0af37d0bd90d7.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:30 +0200
+
+
+Started GET "/assets/jquery.validate.self-5f1421e7608c66470d31cfefd1cb8e7cfe3345847c7b73a5fe63562528dee96b.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:31 +0200
+
+
+Started GET "/assets/jquery.validate.additional-methods.self-0fc647a2ea7acd6d90dfa6870b4f2898596efb1ad5980957a46c47e2284f6460.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:31 +0200
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-05-09 17:16:31 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 127.0.0.1 at 2016-05-09 17:16:31 +0200
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:17:41 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.6ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (4.9ms)
+  Rendered employees/new.html.erb (9.5ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 17:17:49 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"retrztrh", "address"=>"", "salary"=>"55tttt", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "retrztrh"], ["address", ""], ["salary", 55.0], ["created_at", "2016-05-09 15:17:49.369965"], ["updated_at", "2016-05-09 15:17:49.369965"]]
+  [1m[35m (2.4ms)[0m  COMMIT
+  Rendered employees/partials/_employee.html.erb (4.1ms)
+  Rendered employees/create.js.erb (9.7ms)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:17:56 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.5ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (4.3ms)
+  Rendered employees/new.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2016-05-09 17:18:00 +0200
+Processing by EmployeesController#create as JS
+  Parameters: {"utf8"=>"✓", "employee"=>{"name"=>"htrhrt", "address"=>"", "salary"=>"thtrhtr", "department_id"=>""}, "commit"=>"Create Employee"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "employees" ("name", "address", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "htrhrt"], ["address", ""], ["salary", 0.0], ["created_at", "2016-05-09 15:18:00.675847"], ["updated_at", "2016-05-09 15:18:00.675847"]]
+  [1m[35m (4.3ms)[0m  COMMIT
+  Rendered employees/partials/_employee.html.erb (2.9ms)
+  Rendered employees/create.js.erb (8.1ms)
+Completed 200 OK in 24ms (Views: 14.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:21:30 +0200
+Processing by EmployeesController#new as HTML
+  [1m[36mDepartment Load (0.9ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered employees/partials/_form.html.erb (6.8ms)
+  Rendered employees/new.html.erb (11.1ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2016-05-09 17:21:48 +0200
+Processing by EmployeesController#new as HTML
+  [1m[35mDepartment Load (0.7ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered employees/partials/_form.html.erb (8.7ms)
+  Rendered employees/new.html.erb (12.7ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2016-05-09 17:25:34 +0200
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/partials/_company_table.html.erb (2.2ms)
+  Rendered companies/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-05-09 17:25:36 +0200
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (0.5ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered departments/partials/_department_table.html.erb (1.8ms)
+  Rendered departments/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-05-09 17:31:18 +0200
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.6ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered departments/partials/_department_table.html.erb (1.6ms)
+  Rendered departments/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-05-09 17:31:19 +0200
+Processing by DepartmentsController#new as HTML
+  [1m[35mCompany Load (0.6ms)[0m  SELECT "companies".* FROM "companies"
+  [1m[36mDepartment Load (0.7ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  [1m[35mEmployee Load (0.8ms)[0m  SELECT "employees".* FROM "employees"
+  Rendered departments/partials/_form.html.erb (12.7ms)
+  Rendered departments/new.html.erb (26.8ms)
+Completed 200 OK in 42ms (Views: 29.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2016-05-09 17:33:13 +0200
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/partials/_company_table.html.erb (1.9ms)
+  Rendered companies/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 82ms (Views: 81.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2016-05-09 17:33:14 +0200
+Processing by CompaniesController#new as HTML
+  Rendered companies/partials/_form.html.erb (3.1ms)
+  Rendered companies/new.html.erb (9.0ms)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2016-05-09 17:37:52 +0200
+Processing by CompaniesController#new as HTML
+  Rendered companies/partials/_form.html.erb (1.8ms)
+  Rendered companies/new.html.erb (6.5ms)
+Completed 200 OK in 26ms (Views: 15.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-05-09 17:37:57 +0200
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (0.5ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered departments/partials/_department_table.html.erb (3.1ms)
+  Rendered departments/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 78ms (Views: 69.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-05-09 17:37:58 +0200
+Processing by DepartmentsController#new as HTML
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mDepartment Load (0.7ms)[0m  SELECT "departments".* FROM "departments"
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT "employees".* FROM "employees"[0m
+  Rendered departments/partials/_form.html.erb (19.9ms)
+  Rendered departments/new.html.erb (24.1ms)
+Completed 200 OK in 39ms (Views: 23.4ms | ActiveRecord: 6.3ms)

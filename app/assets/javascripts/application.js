@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require components/navbar
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 
