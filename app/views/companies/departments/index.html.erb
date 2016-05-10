@@ -1,5 +1,14 @@
 <div class="container">
-  <h3>Departments of <%= @departments.first.company.name %></h3>
+  <% if @departments.empty? %>
+      <div class="alert alert-danger" role="alert">
+        <strong>Sorry!</strong> This company doesn't have any departments.
+      </div>
+  <% else %>
+      <div class="container">
+        <h3>Departments of <%= @departments.first.company.name %></h3>
 
-  <%= render partial: 'departments/partials/department_table', locals: {departments: @departments} %>
+        <%= render partial: 'departments/partials/department_table', locals: {departments: @departments} %>
+      </div>
+  <% end %>
 </div>
+
