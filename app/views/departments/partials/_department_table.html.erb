@@ -1,39 +1,25 @@
-<div class="container">
-  <div class="row">
+<table id="department_table" class="table table-bordred table-striped">
 
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Company</th>
+    <th>Manager</th>
+    <th># Employees</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
 
-    <div class="col-md-12">
-      <h3>Departments</h3>
-      <p><button type="button" id="new_department" class="btn btn-primary mybuttons">Create new department</button></p>
-      <div class="table-responsive">
+  <% departments.each_with_index do |department| %>
+      <%= render partial: 'departments/partials/department', locals: {department: department} %>
+  <% end %>
 
+  </tbody>
 
-        <table id="department_table" class="table table-bordred table-striped">
+</table>
 
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Company</th>
-            <th>Manager</th>
-            <th># Employees</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-          </thead>
-          <tbody>
-
-          <% departments.each_with_index do |department| %>
-              <%= render partial: 'departments/partials/department', locals: {department: department} %>
-          <% end %>
-
-          </tbody>
-
-        </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <script>$(function () {
   var $modal = $('#department_modal');
   $('#new_department').on('click', function () {

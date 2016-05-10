@@ -1,2 +1,16 @@
-<%= render partial: 'departments/partials/department_table', locals: {departments: @departments} %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Departments</h3>
+      <p>
+        <button type="button" id="new_department" class="btn btn-primary mybuttons">Create new department</button>
+      </p>
+      <div class="table-responsive">
+        <%= render partial: 'departments/partials/department_table', locals: {departments: @departments} %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="department_modal" class="modal fade" role="dialog"></div>

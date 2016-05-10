@@ -1,5 +1,5 @@
 <tr id="company_<%= company.id %>">
-  <td><%= company.name %></td>
+  <td><%= link_to company.name, company_departments_path(company) %></td>
   <td><%= get_department_count(company) %></td>
   <td><%= get_employee_count(company) %></td>
   <td>

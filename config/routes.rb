@@ -2,8 +2,12 @@ Rails.application.routes.draw do
 
   get 'welcomes/index'
   get 'abouts/index'
-  resources :companies, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :departments, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :companies, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :departments, only: [:index], controller: 'companies/departments'
+  end
+  resources :departments, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :employees, only: [:index], controller: 'departments/employees'
+  end
   resources :employees, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection do
       post :cut

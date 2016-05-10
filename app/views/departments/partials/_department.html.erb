@@ -1,6 +1,6 @@
 <tr id="department_<%= department.id %>">
-  <td><%= department.name %></td>
-  <td><%= department.company.name rescue '' %></td>
+  <td><%= link_to department.name, department_employees_path(department) %></td>
+  <td><%= link_to department.company.name, company_departments_path(department.company) if department.company.present? %></td>
   <td><%= department.manager.name rescue '' %></td>
   <td><%= get_employee_count(department) %></td>
   <td>

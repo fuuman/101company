@@ -1,48 +1,29 @@
-<div class="container">
-  <div class="row">
+<table id="employee_table" class="table table-bordred table-striped">
 
-
-    <div class="col-md-12">
-      <h3>Employees</h3>
-      <p>
-        <button type="button" id="new_employee" class="btn btn-primary mybuttons">Create new employee</button>
-      </p>
-
-      <%= link_to cut_employees_path employees.to_param, method: :post %>
-
-      <div id="salary_statistics">
-        <%= render partial: 'employees/partials/statistics', locals: {employees: employees} %>
-      </div>
-
-      <div class="table-responsive">
-        <table id="employee_table" class="table table-bordred table-striped">
-
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Salary</th>
-            <th>Company</th>
-            <th>Department</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-          </thead>
-          <tbody>
-
-          <% employees.each_with_index do |employee| %>
-              <%= render partial: 'employees/partials/employee', locals: {employee: employee} %>
-          <% end %>
-
-          </tbody>
-
-        </table>
-
-      </div>
-    </div>
+  <div style="margin-bottom: 30px; margin-top: 30px" id="salary_statistics">
+    <%= render partial: 'employees/partials/statistics', locals: {employees: employees} %>
   </div>
-</div>
-</div>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Salary</th>
+    <th>Company</th>
+    <th>Department</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% employees.each_with_index do |employee| %>
+      <%= render partial: 'employees/partials/employee', locals: {employee: employee} %>
+  <% end %>
+
+  </tbody>
+
+</table>
+
 <script>$(function () {
   var $modal = $('#employee_modal');
   $('#new_employee').on('click', function () {

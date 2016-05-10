@@ -43,4 +43,7 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(:name)
   end
 
+  def set_departments
+    @departments = Department.where(company_id: params[:id])
+  end
 end

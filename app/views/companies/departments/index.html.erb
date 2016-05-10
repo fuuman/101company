@@ -1,0 +1,5 @@
+<div class="container">
+  <h3>Departments of <%= @departments.first.company.name %></h3>
+
+  <%= render partial: 'departments/partials/department_table', locals: {departments: @departments} %>
+</div>

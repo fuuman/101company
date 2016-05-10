@@ -1,2 +1,18 @@
-<%= render partial: 'employees/partials/employee_table', locals: {employees: @employees} %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Employees</h3>
+      <p>
+        <button style="margin-bottom: -10px" type="button" id="new_employee" class="btn btn-primary mybuttons">Create new employee</button>
+      </p>
+
+      <div class="table-responsive">
+
+        <%= render partial: 'employees/partials/employee_table', locals: {employees: @employees} %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="employee_modal" class="modal fade" role="dialog"></div>
