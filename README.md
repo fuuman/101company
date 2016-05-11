@@ -39,10 +39,10 @@ PostgreSQL instanceOf this
 Bootstrap instanceOf this
 JQuery instanceOf this
 
-# === # === # === # === # === # === # === # === # === # === # === # === #
+# === # === # === # === # === #
 
 ### Code from other source
-Navbar: http://bootsnipp.com/snippets/featured/navbar-fixed-on-scrolling-with-transition
+Navbar: http://bootsnipp.com/snippets/featured/navbar-fixed-on-scrolling-with-transition \n
 Datatables: http://bootsnipp.com/snippets/featured/bootstrap-snipp-for-datatable
 
 ### Pictures:
