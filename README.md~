@@ -14,30 +14,30 @@ For more information visit http://www.tutorialspoint.com/ruby-on-rails/rails-dir
 
 ## Usage 
 We deployed our application on Heroku, so that you can test it very easily without any building effort on your side.
+Just visit https://companymanager2016.herokuapp.com 
 We already added some test data for you. Feel free to add, update or delete.
-Just visit https://companymanager2016.herokuapp.com
 
 ## Metadata
-- this memberOf Theme:Web programming
-- Language:Javascript instanceOf this
-- Language:Ruby instanceOf this
-- Language:CSS instanceOf this
-- Language:HTML instanceOf this
-- Technology:Ruby on Rails instanceOf this
-- Technology:Database instanceOf this
-- Feature:Web UI instanceOf this
-- Feature:instanceOf this
-- Feature:Company instanceOf this
-- Feature:Total instanceOf this
-- Feature:Median instanceOf this
-- Feature:Persistence instanceOf this
-- Feature:Editing instanceOf this
-- Feature:Browsing instanceOf this
-- Feature:Restructuring instanceOf this
-- Feature:Hierarchical company instanceOf this
-- PostgreSQL instanceOf this
-- Bootstrap instanceOf this
-- JQuery instanceOf this
+this memberOf Theme:Web programming
+Language:Javascript instanceOf this
+Language:Ruby instanceOf this
+Language:CSS instanceOf this
+Language:HTML instanceOf this
+Technology:Ruby on Rails instanceOf this
+Technology:Database instanceOf this
+Feature:Web UI instanceOf this
+Feature:instanceOf this
+Feature:Company instanceOf this
+Feature:Total instanceOf this
+Feature:Median instanceOf this
+Feature:Persistence instanceOf this
+Feature:Editing instanceOf this
+Feature:Browsing instanceOf this
+Feature:Restructuring instanceOf this
+Feature:Hierarchical company instanceOf this
+PostgreSQL instanceOf this
+Bootstrap instanceOf this
+JQuery instanceOf this
 
 ### Code from other source
 - Navbar: http://bootsnipp.com/snippets/featured/navbar-fixed-on-scrolling-with-transition 
