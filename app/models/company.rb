@@ -4,6 +4,7 @@
 class Company < ActiveRecord::Base
   # === Associations ===
   has_many :departments, dependent: :destroy
+  has_many :employees, through: :departments
 
   #a company must have a name
   # === Validations ===

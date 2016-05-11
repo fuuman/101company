@@ -3,6 +3,8 @@
   <td><%= link_to department.company.name, company_departments_path(department.company) if department.company.present? %></td>
   <td><%= department.manager.name rescue '' %></td>
   <td><%= get_employee_count(department) %></td>
+  <td><%= '%.2f' % get_mean_salary(department.employees) %></td>
+  <td><%= '%.2f' % get_total_salaries(department.employees) %></td>
   <td>
     <p data-placement="top" data-toggle="tooltip" title="Edit">
       <button class="btn btn-primary btn-xs" id="edit_department_<%= department.id %>">

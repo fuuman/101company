@@ -1,8 +1,7 @@
 module EmployeesHelper
+  #Developer : André & Frank
 
-  #Developer : André&Frank
-  #total salaries adds up every salary of the given collection employees
-
+  # return total salary of the given collection employees
   def get_total_salaries(employees)
     total = 0
     employees.each do |e|
@@ -13,7 +12,7 @@ module EmployeesHelper
     total.round(2)
   end
 
-  #mean salary calculates the average salary of the given collection employees
+  # returns the average salary of the given collection employees
   def get_mean_salary(employees)
     if employees.count != 0
       (get_total_salaries(employees) / employees.count).round(2)

@@ -2,6 +2,8 @@
   <td><%= link_to company.name, company_departments_path(company) %></td>
   <td><%= get_department_count(company) %></td>
   <td><%= get_employee_count(company) %></td>
+  <td><%= '%.2f' % get_mean_salary(company.employees) %></td>
+  <td><%= '%.2f' % get_total_salaries(company.employees) %></td>
   <td>
     <p data-placement="top" data-toggle="tooltip" title="Edit">
       <button class="btn btn-primary btn-xs" id="edit_company_<%= company.id %>">
