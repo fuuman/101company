@@ -47,7 +47,7 @@ JQuery instanceOf this
 Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
 
 ### Who did work on what?
-- Ruby on Rails Instructions / Leader:Marco
+- Ruby on Rails Instructions / Leader: Marco
 - Helpermethods: Frank & André
 - Testing & Evaluation: Isabelle & Diana & Frank
 - Static webpages (e.g. About): Isabelle & Diana
