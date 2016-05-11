@@ -15,6 +15,7 @@ For more information visit http://www.tutorialspoint.com/ruby-on-rails/rails-dir
 ## Usage 
 We deployed our application on Heroku, so that you can test it very easily without any building effort on your side.
 Just visit https://companymanager2016.herokuapp.com 
+We already added some test data for you. Feel free to add, update or delete.
 
 ## Metadata
 this memberOf Theme:Web programming

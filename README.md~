@@ -5,8 +5,8 @@ Web programming in Language:Ruby with Technology:Ruby on Rails
 
 ## Characteristics 
 We exercised Web Programming to implement a new contribution to 101company. We used the well-known framework Ruby on Rails. 
-The original part of our implemantation is, that we invest a lot of time in a nice looking frontend. Futhermore there are not so many Rails contributions yet.
-So it should be a very interesting repository to other people visiting the 101wiki. For more informations about used languages and technologies just look at the 'Metadata' below.
+The original part of our implemantation is that we invest a lot of time in a nice looking frontend. Futhermore there are not so many Rails contributions yet.
+So it should be a very interesting repository to other people visiting the 101wiki. For more information about used languages and technologies just look at the 'Metadata' below.
 
 ## Architecture
 Standard rails project structure.
