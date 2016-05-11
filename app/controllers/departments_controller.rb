@@ -1,4 +1,6 @@
 class DepartmentsController < ApplicationController
+  #Developer: Marco&Marius
+
   # === Callbacks ===
   before_action :set_departments, only: [:index, :new, :edit]
   before_action :set_companies, only: [:new, :edit]

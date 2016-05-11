@@ -1,3 +1,6 @@
+#Developer: Marco
+#creating the foreign keys for the different tables
+
 class AddForeignKeys < ActiveRecord::Migration
   def change
     add_reference :departments, :company, index: true

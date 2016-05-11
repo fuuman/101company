@@ -1,3 +1,6 @@
+#Developer: Marco
+#creating the table for employees and give it a timestamp
+
 class CreateEmployees < ActiveRecord::Migration
   def change
     create_table :employees do |t|

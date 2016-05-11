@@ -32,3 +32,9 @@ Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+Testing&Evaluation: Isabelle & Diana
+Ruby on Rails Instruction: Marco
+
+

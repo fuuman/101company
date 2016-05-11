@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  #Developer: Marco&Marius
+
   # === Callbacks ===
   before_action :set_companies, only: [:index]
   before_action :set_company, only: [:edit, :update, :destroy]

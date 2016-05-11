@@ -1,6 +1,9 @@
 class Companies::DepartmentsController < ApplicationController
+  #Developer: Marco&Marius
+
   # === Callbacks ===
   before_action :set_company, only: [:index]
+
 
   def index
     @departments = Department.where(company_id: @company.id)

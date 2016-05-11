@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+#Auto-Generated
 ActiveRecord::Schema.define(version: 20160502131049) do
 
   create_table "companies", force: :cascade do |t|

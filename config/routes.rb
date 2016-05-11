@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #Developer: Marco
+  #matches url to controller action
   get 'welcomes/index'
   get 'abouts/index'
   resources :companies, only: [:index, :new, :create, :edit, :update, :destroy] do

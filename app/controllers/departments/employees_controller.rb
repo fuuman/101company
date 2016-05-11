@@ -1,4 +1,6 @@
 class Departments::EmployeesController < ApplicationController
+  #Developer: Marco&Marius
+
   # === Callbacks ===
   before_action :set_department, only: [:index]
 

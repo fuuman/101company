@@ -21,7 +21,7 @@
           </thead>
           <tbody>
 
-          <% companies.each_with_index do |company| %>
+          <% companies.each do |company| %>
               <%= render partial: 'companies/partials/company', locals: {company: company} %>
           <% end %>
 

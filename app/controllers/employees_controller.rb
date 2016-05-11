@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  #Developer: Marco&Marius
+
   # === Callbacks ===
   before_action :set_employees, only: [:index, :create, :update]
   before_action :set_departments, only: [:new, :edit]
