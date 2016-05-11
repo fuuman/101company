@@ -45,7 +45,7 @@ class DepartmentsController < ApplicationController
   end
 
   def set_employees
-    @employees = Employee.all
+    @employees = Employee.where(department_id: params[:id])
   end
 
   def department_params
