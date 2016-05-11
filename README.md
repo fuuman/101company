@@ -44,7 +44,7 @@ JQuery instanceOf this
 - Datatables: http://bootsnipp.com/snippets/featured/bootstrap-snipp-for-datatable
 
 ### Pictures:
-Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
+- Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
 
 ### Who did work on what?
 - Ruby on Rails Instructions / Leader: Marco
@@ -53,5 +53,5 @@ Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
 - Static webpages (e.g. About): Isabelle & Diana
 - Controller: Marco & Marius
 - Views: Marco
-- Contribution guide:	All together (in a meeting)
+- Contribution guide: All together (in a meeting)
 
