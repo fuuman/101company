@@ -39,21 +39,19 @@ PostgreSQL instanceOf this
 Bootstrap instanceOf this
 JQuery instanceOf this
 
-# === # === # === # === # === #
-
 ### Code from other source
-Navbar: http://bootsnipp.com/snippets/featured/navbar-fixed-on-scrolling-with-transition \n
-Datatables: http://bootsnipp.com/snippets/featured/bootstrap-snipp-for-datatable
+- Navbar: http://bootsnipp.com/snippets/featured/navbar-fixed-on-scrolling-with-transition 
+- Datatables: http://bootsnipp.com/snippets/featured/bootstrap-snipp-for-datatable
 
 ### Pictures:
 Home: https://pixabay.com/de/computer-b%C3%BCro-gesch%C3%A4ft-arbeit-472016/
 
 ### Who did work on what?
-Ruby on Rails Instructions / Leader: 	Marco
-Helpermethods:				Frank & André
-Testing & Evaluation: 			Isabelle & Diana
-Static webpages (e.g. About):		Isabelle & Diana
-Controller:				Marco & Marius
-Views:					Marco
-Contribution guide:			All together (in a meeting)
+- Ruby on Rails Instructions / Leader:Marco
+- Helpermethods: Frank & André
+- Testing & Evaluation: Isabelle & Diana & Frank
+- Static webpages (e.g. About): Isabelle & Diana
+- Controller: Marco & Marius
+- Views: Marco
+- Contribution guide:	All together (in a meeting)
 
