@@ -34,14 +34,19 @@ class EmployeesController < ApplicationController
   end
 
   def cut
-    cut_salaries(params[:employees])
+    # TODO: an den url helper hab ich employees übergeben. hier weiß ich nicht wie ich die employees aus den params kriegen soll.
+    # stecken als ActiveRecord:Relation in params[:format]. würde gerne in @employees speichern.
+    cut_salaries(@employees)
+    @employees.reload
   end
 
   private
 
   def cut_salaries(employees)
-    employees.each do |e|
-      e.cut
+    unless employees.nil?
+      employees.each do |e|
+        e.cut
+      end
     end
   end
 
