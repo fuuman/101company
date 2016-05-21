@@ -1,5 +1,5 @@
-#Developer: Marius
-#A Employee have one department
+# Developer: Marius
+# An Employee has one department
 
 class Employee < ActiveRecord::Base
   # === Associations ===
