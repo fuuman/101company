@@ -7,10 +7,14 @@
       <div class="container">
         <h3>Employees of <%= @employees.first.department.name %></h3>
 
-        <%= link_to cut_employees_path(@employees.pluck(:id)), method: :post, remote: true do %>
-            <p>
-              <button type="button" class="btn btn-warning mybuttons">Cut all salaries</button>
-            </p>
+        <div style="margin-bottom: -10px; margin-top: 30px">
+          <%= render partial: 'employees/partials/statistics', locals: {employees: @employees} %>
+        </div>
+
+        <%= link_to cut_department_employees_path(department_id: @department.id, format: @employees.pluck(:id)), method: :post, remote: true do %>
+
+            <button type="button" class="btn btn-warning mybuttons">Cut all salaries</button>
+
         <% end %>
 
         <%= render partial: 'employees/partials/employee_table', locals: {employees: @employees} %>

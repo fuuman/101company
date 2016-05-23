@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  #Developer: Marco&Marius
+  # Developer: Marco & Marius
 
   # === Callbacks ===
   before_action :set_employees, only: [:index, :create, :update]
@@ -34,9 +34,14 @@ class EmployeesController < ApplicationController
   end
 
   def cut
+    set_employees
     employees_id_array = params[:format].split('/')
-    @employees = Employee.where(id: employees_id_array)
-    cut_salaries(@employees)
+    if employees_id_array.size == 1
+      @employee = Employee.where(id: employees_id_array)
+      cut_salaries(@employee)
+    else
+      cut_salaries(@employees)
+    end
     @employees.reload
   end
 

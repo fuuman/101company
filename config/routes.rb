@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     resources :departments, only: [:index], controller: 'companies/departments'
   end
   resources :departments, only: [:index, :new, :create, :edit, :update, :destroy] do
-    resources :employees, only: [:index], controller: 'departments/employees'
+    resources :employees, only: [:index, :cut], controller: 'departments/employees' do
+      collection do
+        post :cut
+      end
+    end
   end
   resources :employees, only: [:index, :new, :create, :edit, :update, :destroy, :cut] do
     collection do

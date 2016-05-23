@@ -5,33 +5,42 @@
   <td><%= link_to employee.department.company.name, company_departments_path(employee.department.company) if employee.department.present? && employee.department.company.present? %></td>
   <td><%= link_to employee.department.name, department_employees_path(employee.department) if employee.department.present? %></td>
   <td>
-    <%= link_to cut_employees_path(employee.id), method: :post, remote: true do %>
-        <p data-placement="top" data-toggle="tooltip" title="Cut">
-          <button class="btn btn-warning btn-xs">
-            <span class="glyphicon glyphicon-scissors"></span></button>
-        </p>
+    <% if url_for.include? 'departments' %>
+        <%= link_to cut_department_employees_path(department_id: employee.department.id, format: employee.id), method: :post, remote: true do %>
+            <p data-placement="top" data-toggle="tooltip" title="Cut">
+              <button class="btn btn-warning btn-xs">
+                <span class="glyphicon glyphicon-scissors"></span></button>
+            </p>
+        <% end %>
+    <% else %>
+        <%= link_to cut_employees_path(format: employee.id), method: :post, remote: true do %>
+            <p data-placement="top" data-toggle="tooltip" title="Cut">
+              <button class="btn btn-warning btn-xs">
+                <span class="glyphicon glyphicon-scissors"></span></button>
+            </p>
+        <% end %>
     <% end %>
-  </td>
-  <td>
-    <p data-placement="top" data-toggle="tooltip" title="Edit">
-      <button class="btn btn-primary btn-xs" id="edit_employee_<%= employee.id %>">
-        <span class="glyphicon glyphicon-pencil"></span></button>
-    </p>
-  </td>
-  <td>
-    <%= link_to employee, method: :delete, data: {confirm: "Are you sure?"}, remote: true do %>
-        <p data-placement="top" data-toggle="tooltip" title="Delete">
-          <button class="btn btn-danger btn-xs">
-            <span class="glyphicon glyphicon-trash"></span></button>
-        </p>
-    <% end %>
-  </td>
-</tr>
-<script>$(function () {
-  var $modal = $('#employee_modal');
-  $('#edit_employee_<%= employee.id %>').on('click', function () {
-    $modal.load('<%= edit_employee_path(employee) %>', '', function () {
-      $modal.modal();
-    });
-  });
-});</script>
+        </td>
+        <td>
+          <p data-placement="top" data-toggle="tooltip" title="Edit">
+            <button class="btn btn-primary btn-xs" id="edit_employee_<%= employee.id %>">
+              <span class="glyphicon glyphicon-pencil"></span></button>
+          </p>
+        </td>
+        <td>
+          <%= link_to employee, method: :delete, data: {confirm: "Are you sure?"}, remote: true do %>
+              <p data-placement="top" data-toggle="tooltip" title="Delete">
+                <button class="btn btn-danger btn-xs">
+                  <span class="glyphicon glyphicon-trash"></span></button>
+              </p>
+          <% end %>
+        </td>
+        </tr>
+        <script>$(function () {
+          var $modal = $('#employee_modal');
+          $('#edit_employee_<%= employee.id %>').on('click', function () {
+            $modal.load('<%= edit_employee_path(employee) %>', '', function () {
+              $modal.modal();
+            });
+          });
+        });</script>
