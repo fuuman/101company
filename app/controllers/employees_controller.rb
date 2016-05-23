@@ -37,7 +37,7 @@ class EmployeesController < ApplicationController
     employees_id_array = params[:format].split('/')
     @employees = Employee.where(id: employees_id_array)
     cut_salaries(@employees)
-    @employees = Employee.where(id: employees_id_array)
+    @employees.reload
   end
 
   private

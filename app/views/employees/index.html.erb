@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3>Employees</h3>
+      <h3>All Employees</h3>
       <p>
         <button style="margin-bottom: -10px" type="button" id="new_employee" class="btn btn-primary mybuttons">Create new employee</button>
       </p>
 
+      <div style="margin-bottom: -10px; margin-top: 30px">
+        <%= render partial: 'employees/partials/statistics', locals: {employees: @employees} %>
+      </div>
+
+      <%= link_to cut_employees_path(@employees.pluck(:id)), method: :post, remote: true do %>
+          <p>
+            <button type="button" class="btn btn-primary mybuttons">Cut salaries</button>
+          </p>
+      <% end %>
+
       <div class="table-responsive">
-
         <%= render partial: 'employees/partials/employee_table', locals: {employees: @employees} %>
-
       </div>
     </div>
   </div>

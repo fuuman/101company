@@ -1,3 +1,3 @@
 $('#employee_modal').modal('hide')
 $('#employee_<%= @employee.id %>').replaceWith('<%= j render partial: 'employees/partials/employee', locals: {employee: @employee} %>')
-$('#salary_statistics').html('<%= j render partial: 'employees/partials/statistics', locals: {employees: @employees} %>')
+$('#salary_statistics').replaceWith('<%= j render partial: 'employees/partials/statistics', locals: {employees: @employees} %>')

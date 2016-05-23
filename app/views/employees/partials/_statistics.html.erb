@@ -1,9 +1,4 @@
 <div id="salary_statistics">
 <h4>Total salaries: <%= '%.2f' % get_total_salaries(employees) %></h4>
 <h4>Mean salary: <%= '%.2f' % get_mean_salary(employees) %></h4>
-<%= link_to cut_employees_path(employees.pluck(:id)), method: :post, remote: true do %>
-<p>
-  <button style="margin-bottom: -10px" type="button" class="btn btn-primary mybuttons">Cut salaries</button>
-</p>
-<% end %>
 </div>

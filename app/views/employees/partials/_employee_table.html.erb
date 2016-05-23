@@ -1,8 +1,5 @@
 <table id="employee_table" class="table table-bordred table-striped">
 
-  <div style="margin-bottom: 30px; margin-top: 30px">
-    <%= render partial: 'employees/partials/statistics', locals: {employees: employees} %>
-  </div>
   <thead>
   <tr>
     <th>Name</th>
@@ -16,7 +13,7 @@
   </thead>
   <tbody>
 
-  <% employees.each_with_index do |employee| %>
+  <% employees.order(name: :asc).each do |employee| %>
       <%= render partial: 'employees/partials/employee', locals: {employee: employee} %>
   <% end %>
 
