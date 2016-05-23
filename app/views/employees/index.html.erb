@@ -12,7 +12,7 @@
 
       <%= link_to cut_employees_path(@employees.pluck(:id)), method: :post, remote: true do %>
           <p>
-            <button type="button" class="btn btn-primary mybuttons">Cut salaries</button>
+            <button type="button" class="btn btn-warning mybuttons">Cut all salaries</button>
           </p>
       <% end %>
 

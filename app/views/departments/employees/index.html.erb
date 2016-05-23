@@ -7,6 +7,12 @@
       <div class="container">
         <h3>Employees of <%= @employees.first.department.name %></h3>
 
+        <%= link_to cut_employees_path(@employees.pluck(:id)), method: :post, remote: true do %>
+            <p>
+              <button type="button" class="btn btn-warning mybuttons">Cut all salaries</button>
+            </p>
+        <% end %>
+
         <%= render partial: 'employees/partials/employee_table', locals: {employees: @employees} %>
       </div>
   <% end %>
