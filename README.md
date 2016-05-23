@@ -29,6 +29,7 @@ Just visit https://companymanager2016.herokuapp.com
 - Feature:instanceOf this
 - Feature:Company instanceOf this
 - Feature:Total instanceOf this
+- Feature:Cut instanceOf this
 - Feature:Median instanceOf this
 - Feature:Persistence instanceOf this
 - Feature:Editing instanceOf this
